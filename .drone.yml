@@ -1,3 +1,7 @@
+workspace:
+  base: /data
+  path: src/github.com/liu1536326836/drone_test
+
 pipeline:
   build:
     image: golang
@@ -5,4 +9,8 @@ pipeline:
       - go build
       - go test
 
-+branches: master
+clone:
+  git:
+    image: plugins/git
+
+branches: master
